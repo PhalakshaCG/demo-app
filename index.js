@@ -8,7 +8,7 @@ const PORT = 3000;
 const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const WEATHER_API_URL = 'http://api.weatherapi.com/v1';
 app.get('/weather', async (req, res) => {
-  const city = req.query.city || 'Bengaluru '; // Default city is Bengaluru
+  const city = req.query.city || 'Puttur'; // Default city is Bengaluru
 
   try {
     const response = await axios.get(WEATHER_API_URL+'/current.json', {
@@ -22,6 +22,7 @@ app.get('/weather', async (req, res) => {
     res.send(`
       <h1>Weather in ${weatherData.location.name}</h1>
       <p>Temperature: ${weatherData.current.temp_c}°C</p>
+      <p>Weather Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
           <p>Weather Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
     `);
