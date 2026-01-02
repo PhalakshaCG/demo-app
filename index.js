@@ -22,8 +22,12 @@ app.get('/weather', async (req, res) => {
     res.send(`
       <h1>Weather in ${weatherData.location.name}</h1>
       <p>Temperature: ${weatherData.current.temp_c}°C</p>
+<<<<<<< HEAD
       <p>Weather Condition: ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
+=======
+      <p>Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
+>>>>>>> 2635119 (feat: Add image for weather condition)
     `);
   } catch (error) {
     res.status(500).send('Error fetching weather data. Please try again later.');
