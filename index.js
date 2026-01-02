@@ -24,6 +24,7 @@ app.get('/weather', async (req, res) => {
       <p>Temperature: ${weatherData.current.temp_c}°C</p>
       <p>Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
+      <p>Condition: ${weatherData.current.condition.text}</p>
       <p>Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
     `);
   } catch (error) {
