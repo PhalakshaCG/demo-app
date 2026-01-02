@@ -11,7 +11,7 @@ app.get('/weather', async (req, res) => {
   const city = req.query.city || 'Bengaluru '; // Default city is Bengaluru
 
   try {
-    const response = await axios.get(WEATHER_API_URL+'/current.json', {
+    const response = await axios.get(WEATHER_API_URL + '/current.json', {
       params: {
         q: city,
         key: WEATHER_API_KEY,
@@ -22,8 +22,14 @@ app.get('/weather', async (req, res) => {
     res.send(`
       <h1>Weather in ${weatherData.location.name}</h1>
       <p>Temperature: ${weatherData.current.temp_c}°C</p>
+<<<<<<< HEAD
       <p>Weather Condition: ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
+=======
+      <p>Condition: ${weatherData.current.condition.text}</p>
+      <p>Humidity: ${weatherData.current.humidity}%</p>
+      <p>Wind Speed: ${weatherData.current.wind_kph} kph</p>
+>>>>>>> 7db9787 (added humidity and wind speed)
     `);
   } catch (error) {
     res.status(500).send('Error fetching weather data. Please try again later.');
