@@ -23,10 +23,14 @@ app.get('/weather', async (req, res) => {
       <h1>Weather in ${weatherData.location.name}</h1>
       <p>Temperature: ${weatherData.current.temp_c}°C</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <p>Weather Condition: ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
 =======
       <p>Condition: ${weatherData.current.condition.text}</p>
+=======
+          <p>Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
+>>>>>>> 38877df (add icon)
       <p>Humidity: ${weatherData.current.humidity}%</p>
       <p>Wind Speed: ${weatherData.current.wind_kph} kph</p>
 >>>>>>> 7db9787 (added humidity and wind speed)
