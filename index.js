@@ -21,7 +21,7 @@ app.get('/weather', async (req, res) => {
     const weatherData = response.data;
     res.send(`
       <h1>Weather in ${weatherData.location.name}</h1>
-      <p>Temperature: ${weatherData.current.temp_c}°C</p>
+      <p>Temperature: ${weatherData.current.temp_c}°C</p>`
       <p>Weather Condition: <img src="${weatherData.current.condition.icon}" alt="Weather Icon" style="height: 5mm;"> ${weatherData.current.condition.text}</p>
       <p>Precipitation: ${weatherData.current.precip_mm} mm</p>
       `);
